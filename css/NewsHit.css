@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+ul, li {
+  list-style: none; }
+
+html, body {
+  overflow: hidden;
+  width: 100%; }
+
+.header {
+  width: 100%;
+  height: 45px;
+  background: #D23C3B url(../img/logo.jpg) no-repeat;
+  background-position: 4.45% 13px;
+  background-size: 78px 19px;
+  position: fixed; }
+  .header #seach {
+    width: 65.28%;
+    margin-left: 30.56%;
+    height: 28px;
+    margin-top: 7px;
+    border-color: transparent;
+    border-radius: 5px;
+    background: #F5F6F1;
+    color: #949590;
+    font-size: 14px;
+    text-indent: 8.06%; }
+
+nav {
+  height: 37px;
+  border-bottom: 1px solid #E8E8E8;
+  background: #F5F6F1;
+  padding: 10px  15px;
+  box-sizing: border-box;
+  font-weight: bold;
+  position: fixed;
+  top: 45px;
+  width: 100%; }
+  nav li {
+    float: left;
+    margin-right: 5.83%; }
+    nav li a {
+      color: #272727;
+      font-size: 16px; }
+  nav li:nth-of-type(1) a {
+    color: #DC6D73;
+    font-size: 18px;
+    font-weight: bold; }
+  nav .active {
+    color: #DC6D73;
+    font-size: 18px;
+    font-weight: bold; }
+
+main, footer {
+  padding: 0 15px;
+  box-sizing: border-box; }
+
+main {
+  overflow-y: auto;
+  margin-top: 82px; }
+  main .iscrollWrap {
+    position: absolute;
+    top: 82px;
+    height: 515px;
+    overflow-y: scroll; }
+  main .contentList .news2 {
+    display: flex;
+    padding-top: 13px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E3E3E3; }
+    main .contentList .news2 .left {
+      flex: 3; }
+      main .contentList .news2 .left h2 {
+        font-size: 19px;
+        line-height: 25px; }
+      main .contentList .news2 .left p {
+        font-size: 11px;
+        color: #888;
+        height: 42px;
+        line-height: 42px; }
+    main .contentList .news2 .right {
+      flex: 1; }
+      main .contentList .news2 .right img {
+        width: 190/2px;
+        height: 126/2px; }
+
+footer {
+  width: 100%;
+  height: 43px;
+  background: #F0F4F3;
+  border-top: 1px solid #E3E3E3;
+  position: fixed;
+  bottom: 0; }
+  footer ul {
+    height: 100%;
+    display: flex; }
+    footer ul li {
+      height: 100%;
+      color: #4A4A4A;
+      flex: 1;
+      text-align: center;
+      line-height: 43px; }
+    footer ul .active {
+      color: #DC6D73; }

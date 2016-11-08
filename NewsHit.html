@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/NewsHit.css">
+
+</head>
+<body>
+	<header class="header">
+		<input type="text" id="seach" placeholder="搜你想搜的">
+	</header>
+	<nav>
+		
+	</nav>
+
+	<main>
+		<div class="iscrollWrap" id="iscrollWrap">
+			<ul class="contentList">
+			
+			</ul>
+		</div>
+		
+	</main>
+
+	<footer>
+		<ul>
+			<li class="active">首页</li>
+			<li>视频</li>
+			<li>关注</li>
+			<li>我的</li>
+		</ul>
+	</footer>
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="js/NewsHit.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	
+	<script type="text/javascript">
+		var myScroll;
+		window.onload = function(){
+			//iscroll弹性
+			myScroll = new IScroll('#iscrollWrap', { bounceEasing: 'elastic', bounceTime: 1200 });
+			myScroll.on("scrollEnd",function(){
+				console.info(this);
+			});
+
+			//导航栏列表
+			var navList = {result:[{name:'推荐'},{name:'热点'},{name:'视频'},{name:'中山'},{name:'社会'},{name:'头条'}]};
+			var htmlstr = Mustache.render('{{#result}}<li><a href="#">{{name}}</a></li>{{/result}}',navList);
+			$('nav').html(htmlstr);
+		
+
+		}
+		
+
+
+	</script>
+
+	<script type="x-tmpl-mustache" id="tmpList1">
+		{{#result}}
+		<li>
+			<h2><a href="{{url}}">{{title}}</a></h2>
+			<p>
+				<span>来源</span> <time>{{ctime}}</time>
+			</p>
+		</li>
+		{{/result}}
+	</script>
+
+	<script type="x-tmpl-mustache" id="tmpList2">
+		{{#result}}
+		<li class="news2">
+			<div class="left">
+				<h2><a href="{{url}}">{{title}}</a></h2>
+				<p>
+					<span>来源</span> <time>{{ctime}}</time>
+				</p>
+			</div>
+			<div class="right">
+				<img src="{{picUrl}}" alt="">
+			</div>					
+		</li>
+		{{/result}}
+	</script>
+</body>
+</html>
